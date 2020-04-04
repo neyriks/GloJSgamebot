@@ -13,14 +13,15 @@ function myNumber () {
 let number = myNumber();
 myNumber();
 console.log(number);
+
 const myFunc = function () {
-    let question = +prompt('Угадай число от 1 до 100'); // Спрашиваем у пользователя число.
+    let question = prompt('Угадай число от 1 до 100'); // Спрашиваем у пользователя число.
 
     if(question === null) {
         alert('Пока-пока');
         return;
     }
-    
+
     if (!isNumber(question)) {
         alert('Введите число!');
         myFunc();
@@ -35,5 +36,7 @@ const myFunc = function () {
     }  else  {
         alert('Бинго!');
     }
+
+    
 };
 myFunc();
