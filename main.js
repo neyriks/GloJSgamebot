@@ -15,19 +15,25 @@ myNumber();
 console.log(number);
 const myFunc = function () {
     let question = +prompt('Угадай число от 1 до 100'); // Спрашиваем у пользователя число.
+
+    if(question === null) {
+        alert('Пока-пока');
+        return;
+    }
+    
+    if (!isNumber(question)) {
+        alert('Введите число!');
+        myFunc();
+    }
+
     if(question < number) {  // Проверка, если число меньше загадываемогою
         alert('Загадываемое число больше');
         myFunc();  // Рекурсия, запускаем вновь функцию.
     } else if( question > number) {
         alert('Загадываемое число меньше');
         myFunc();
-    } else if(question === number) {
+    }  else  {
         alert('Бинго!');
-    } else if (!isNumber(question)) {
-        alert('Введите число!');
-        myFunc();
-    } else if (question == null) {
-        alert('Пока-пока');
     }
 };
 myFunc();
